@@ -27,4 +27,4 @@ def write_to_parquet(data_frame:pd.DataFrame,file_path:str,file_name:str=None):
         time_stamped_filename=file_name.replace("timestamp",dt)
     else:
         time_stamped_filename=datetime.now().strftime("%d%m%Y%H%M%S")
-    data_frame.to_parquet(f"{file_path}/{time_stamped_filename}.parquet")
+    data_frame.to_parquet(f"{file_path}/{time_stamped_filename}.parquet",index=False)

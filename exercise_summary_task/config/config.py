@@ -96,7 +96,3 @@ class Config:
 
     def setup_environment(self):
         return   load_env_from_json(self.config_file)
-    def parse_variables(self,env_var):
-        input_directory=env_var["directories"]["inputDirectory"]
-        ouput_directory=env_var["directories"]["outputDirectory"]
-        return input_directory,ouput_directory
