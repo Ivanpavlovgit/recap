@@ -1,0 +1,9 @@
+[
+  {"employee_id": 1, "name": "John Doe", "department": "Engineering", "manager_id": 5},
+  {"employee_id": 2, "name": "Jane Smith", "department": "Sales", "manager_id": 6},
+  {"employee_id": 3, "name": "Alice Johnson", "department": "HR", "manager_id": 7},
+  {"employee_id": 4, "name": "Bob Brown", "department": "Engineering", "manager_id": 5},
+  {"employee_id": 5, "name": "Michael Davis", "department": "Engineering", "manager_id": 7},
+  {"employee_id": 6, "name": "Emily Wilson", "department": "Sales", "manager_id": 6},
+  {"employee_id": 7, "name": "David Lee", "department": "HR", "manager_id": null}
+]

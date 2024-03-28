@@ -1,0 +1,9 @@
+[
+  {"employee_id": 1, "salary": 120000},
+  {"employee_id": 2, "salary": 100000},
+  {"employee_id": 3, "salary": 90000},
+  {"employee_id": 4, "salary": 130000},
+  {"employee_id": 5, "salary": 150000},
+  {"employee_id": 6, "salary": 110000},
+  {"employee_id": 7, "salary": 140000}
+]

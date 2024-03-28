@@ -1,0 +1,27 @@
+{
+    "directories": {
+        "mainDirectory": "",
+        "inputDirectory": "./exercise_summary_task/Input",
+        "tempDirectory": "",
+        "outputDirectory": "./exercise_summary_task/Output"
+    },
+    "employees": {
+        "files": {
+            "input": {
+                "empDataFilename": "employees.json",
+                "empPositionsFilename": "employees_positions.csv",
+                "empSalariesFilename": "employees_salaries.json"
+            },
+            "output": {
+                "top3_employees_report": "timestamp_top3",
+                "avg_sal_dept_report": "timestamp_avg_sal_dept",
+                "manager_employees_report": "timestamp_manager_employees"
+            }
+        },
+        "queries": {
+            "top3_employees": "SELECT *,salary/12 as monthly_salary FROM employees_df ORDER BY monthly_salary DESC LIMIT 3",
+            "avg_sal_dept": "SELECT department,AVG(salary) from employees_df GROUP BY department",
+            "manager_employees": "SELECT m.employee_id AS MNGR_employee_id, m.name as MNGR_name,m.department as MNGR_department ,m.position as MNGR_postion,e.employee_id,e.name,e.department,e.position FROM employees_df e JOIN employees_df m WHERE e.manager_id=m.employee_id ORDER BY m.department ASC"
+        }
+    }
+}
