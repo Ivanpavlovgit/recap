@@ -1,5 +1,5 @@
-from Functions.file_functions import load_env_from_json
 from Interfaces.configuration import Configuration
+from Functions.file_functions import load_env_from_json
 class EmployeesConfig(Configuration):
     def __init__(self,config_file:str):
         self.config_file=config_file
@@ -9,9 +9,6 @@ class EmployeesConfig(Configuration):
         self.employees_filename=self.env_var["employees"]["files"]["input"]["empDataFilename"]
         self.employees_positions_filename=self.env_var["employees"]["files"]["input"]["empPositionsFilename"]
         self.employees_salaries_filename=self.env_var["employees"]["files"]["input"]["empSalariesFilename"]
-        self.query_top3_employee=self.env_var["employees"]["queries"]["top3_employees"]
-        self.query_avg_sal_dept=self.env_var["employees"]["queries"]["avg_sal_dept"]
-        self.query_manager_employees=self.env_var["employees"]["queries"]["manager_employees"]
         self.top3_employees_report_filename=self.env_var["employees"]["files"]["output"]["top3_employees_report"]
         self.avg_sal_dept_report_filename=self.env_var["employees"]["files"]["output"]["avg_sal_dept_report"]
         self.mngr_employees_report_filename=self.env_var["employees"]["files"]["output"]["manager_employees_report"]
