@@ -1,5 +1,4 @@
 import sys
-
 from config.employees_config import EmployeesConfig
 from FileProcessors.employees_file_processor import EmployeeFileProcessor
 from ReportServices.employee_report_service import EmployeeReportService
