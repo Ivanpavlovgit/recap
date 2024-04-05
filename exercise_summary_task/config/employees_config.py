@@ -1,7 +1,7 @@
 from Interfaces.configuration import Configuration
 from file_funcs.file_functions import load_env_from_json
 class EmployeesConfig(Configuration):
-    def __init__(self,config_file:str):
+    def __init__(self, config_file:str):
         self.config_file=config_file
         self.env_var=self.setup_environment()
         self.input_directory=self.env_var["directories"]["inputDirectory"]
