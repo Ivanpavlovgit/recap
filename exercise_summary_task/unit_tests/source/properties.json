@@ -1,0 +1,22 @@
+{
+    "directories": {
+        "mainDirectory": "",
+        "inputDirectory": "./exercise_summary_task/Input",
+        "tempDirectory": "",
+        "outputDirectory": "./exercise_summary_task/Output"
+    },
+    "employees": {
+        "files": {
+            "input": {
+                "empDataFilename": "employees.json",
+                "empPositionsFilename": "employees_positions.csv",
+                "empSalariesFilename": "employees_salaries.json"
+            },
+            "output": {
+                "top3_employees_report": "timestamp_top3",
+                "avg_sal_dept_report": "timestamp_avg_sal_dept",
+                "manager_employees_report": "timestamp_manager_employees"
+            }
+        }
+    }
+}

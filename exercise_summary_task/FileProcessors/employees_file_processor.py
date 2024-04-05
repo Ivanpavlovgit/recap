@@ -1,7 +1,7 @@
 import pandas as pd
 from Interfaces.file_processor import FileProcessor
 from Interfaces.configuration import Configuration
-from Functions.file_functions import read_from_csv,read_from_json,write_to_parquet
+from file_funcs.file_functions import read_from_csv,read_from_json,write_to_parquet
 
 class EmployeeFileProcessor(FileProcessor):
     """Class is used to read files into panda dataframe and write panda dataframes to file"""

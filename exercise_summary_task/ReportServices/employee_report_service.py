@@ -40,22 +40,22 @@ class EmployeeReportService:
           'employee_id', 'position'"""
         return self.processor.file_to_df(self.processor.get_conf().get_employees_positions_filename())
 
-    def generate_top_10_employees_report(self):
+    def generate_top_10_employees_report(self)->pd.DataFrame:
         """Function writes the top 10 employees in a parquet file in the output directory"""
-        self.processor.df_to_parquet(
-            self.join_dataframes().nlargest(n=3,columns="salary",keep="all"),
-              self.processor.get_conf().get_top3_employees_report_filename())
+        output=self.join_dataframes().nlargest(n=3,columns="salary",keep="all")
+        self.processor.df_to_parquet(output,self.processor.get_conf().get_top3_employees_report_filename())
+        return output.reset_index(drop=True)
 
-    def generate_average_salary_per_department_report(self):
+    def generate_average_salary_per_department_report(self)->pd.DataFrame:
         """Function wirtes a report for the average salary per department in a parquet file
           in the output directory"""
-        self.processor.df_to_parquet(
-            self.join_dataframes()
+        output=(self.join_dataframes()
             .drop(columns=["employee_id","name","manager_id","position"],inplace=False)
-            .groupby("department").mean("salary"),
-            self.processor.get_conf().get_avg_sal_dept_report_filename())
+            .groupby("department").mean("salary"))
+        self.processor.df_to_parquet(output,self.processor.get_conf().get_avg_sal_dept_report_filename())
+        return output.reset_index(drop=True)
 
-    def generate_managers_subordinates_report(self):
+    def generate_managers_subordinates_report(self)->pd.DataFrame:
         """Function writes a list of the managers and their subordinate employees in the following steps:
         a) merge base joined dataframe with itsel on emplpoyee_id = manager_id
         b)sort by the managers name
@@ -88,3 +88,4 @@ class EmployeeReportService:
         self.processor.df_to_parquet(
             (self_merged_right_employees_df),
             self.processor.get_conf().get_mngr_employees_report_filename())
+        return self_merged_right_employees_df.reset_index(drop=True)

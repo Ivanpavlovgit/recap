@@ -1,0 +1,21 @@
+
+    {
+    "directories": {
+        "mainDirectory": "main",
+        "inputDirectory": "input",
+        "tempDirectory": "temp",
+        "outputDirectory": "output"
+    },
+    "reportInformation": {
+        "files": {
+            "input": {
+                "fileName1": "file1.json",
+                "fileName2": "file2.csv",
+                "fileName3": "file3.txt"
+            },
+            "output": {
+                "output1": "timestamp_1"
+            }
+        }
+    }
+}
